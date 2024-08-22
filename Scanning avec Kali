@@ -1,0 +1,35 @@
+# Scanning avec Metasploitable et Kali
+*Prérequis
+
+    Installer une VM de Metasploitable 2 en mode NAT. Le nom d'utilisateur et le mot de passe par défaut sont root.
+    Référence : Metasploitable 2
+    Installer une VM de Kali en mode NAT.
+    Assurez-vous que les deux VM peuvent communiquer (testez avec un ping).
+
+Tâche 1 : Ping scans – Fast Scan
+
+    nmap -F <adresse_IP_Metasploitable>
+
+Tâche 2 : SYN Scans – All Ports
+
+    nmap -sS -p- <adresse_IP_Metasploitable>
+
+Tâche 3 : TCP Connect Scans – Top Ports
+
+    nmap -sT --top-ports 100 <adresse_IP_Metasploitable>
+
+Tâche 4 : UDP Scans – Top 100 Ports
+
+    nmap -sU --top-ports 100 <adresse_IP_Metasploitable>
+
+Tâche 5 : OS Fingerprinting Scans
+
+    nmap -O <adresse_IP_Metasploitable>
+
+Tâche 6 : Version Scan sur les Ports 21, 22, 23 et 53
+
+    nmap -sV -p 21,22,23,53 <adresse_IP_Metasploitable>
+
+Tâche 7 : Version Scan sur les Ports Ouverts Trouvés en Tâche 5
+
+    nmap -sV <adresse_IP_Metasploitable> -p <ports_ouverts_trouvés>
