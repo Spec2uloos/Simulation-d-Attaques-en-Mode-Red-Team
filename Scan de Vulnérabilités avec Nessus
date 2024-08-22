@@ -1,0 +1,64 @@
+# Scan de Vulnérabilités avec Nessus  (VM XP et Metasploitable pour l'exemple)
+
+* Prérequis
+    VM de Windows XP (rendu disponible par le professeur) en mode NAT.
+    Fichier : XP-Vulnerable.zip
+    VM de Kali (disponible sur le web) en mode NAT.
+    VM de Metasploitable 2 (disponible sur le web) en mode NAT.
+
+Tâche 1 : Scan Avancé de Nessus de la VM Win XP (Sans Authentification)
+Procédez à un scan avancé sans authentification sur la VM Windows XP.
+
+Tâche 2 : Scan de la VM Win XP avec Authentification (Compte Nessus)
+Procédez à un scan de la VM Windows XP avec authentification en utilisant le compte Nessus.
+
+Tâche 3 : Comparaison des Vulnérabilités
+Comparer les vulnérabilités trouvées lors du scan (1) sans authentification et du scan (2) avec authentification. Expliquer les différences.
+
+        
+                Le scan des vulnérabilités en (2) est beaucoup plus approfondi et détaillé que le scan en (1).
+                Les vulnérabilités en (2) révèlent des informations précises sur le système, les logiciels installés, 
+                les versions et les configurations, elles sont beaucoup plus nombreuses, et fournissent des informations sur les correctifs spécifiques nécessaires.
+                Les vulnérabilités en (1) ne nécessitant pas d’authentification, évidemment moins nombreuses, sont les vulnérabilités portant sur les services et les ports exposés, le OS etc.… Elles peuvent être exploitées par des attaquants externes.
+
+
+
+Tâche 4 : Scan de Vulnérabilités de la VM Metasploitable 2
+Procédez à un scan de vulnérabilités sur la VM Metasploitable 2.
+
+Tâche 5 : Génération d’un Rapport HTML du Scan de Win XP (Avec Authentification)
+Générez un rapport HTML du scan effectué sur la VM Windows XP avec authentification.
+
+Tâche 6 : Identification et Explication des Vulnérabilités Critiques
+Identifier et expliquer trois vulnérabilités critiques sur la VM Windows XP et trois sur la VM Metasploitable 2 (pour l'exemple)
+
+    VM XP:
+            1.	MS09-001 - Vulnérabilité de Microsoft Windows SMB (958687) : 
+            La vulnérabilité est due à une corruption de la mémoire dans SMB (Server Message Block), ce qui peut permettre à un attaquant distant d'exécuter du code arbitraire ou de provoquer un déni de service sur la machine cible. Port(s) concerné(s) : 445 tcp cifs
+            2.	Unsupported Windows OS (remote) : 
+            Ce message indique que la version de Windows XP que vous utilisez dans votre VM n'a pas reçu de service pack ou n'est plus prise en charge par Microsoft. Cela signifie que le système est vulnérable à diverses vulnérabilités de sécurité, car il ne bénéficie plus de correctifs de sécurité.
+            3.	MS08-067 - Vulnérabilité du service Windows Server (RPC) (CVE-2008-4250) :
+            Cette vulnérabilité concerne le service Windows Server, qui gère les demandes RPC (Remote Procedure Call). La vulnérabilité permet à un attaquant non authentifié et distant d’envoyer une demande RPC conçue pour exécuter du code malveillant avec des privilèges système.
+
+    VM Metasploitable:
+            
+            1.	Divulgation d'Informations sur les Partages NFS Exportés :
+            Un attaquant peut potentiellement exploiter cette vulnérabilité pour lire et éventuellement écrire des fichiers sur le serveur distant. Cela peut entraîner une violation de la confidentialité et de l'intégrité des données stockées sur le serveur NFS.
+            2.	Détection des Protocoles SSL Version 2 et 3 :
+            Cette vulnérabilité concerne l'acceptation des connexions chiffrées utilisant les protocoles SSL 2.0 et/ou SSL 3.0. Ces versions de SSL présentent des vulnérabilités cryptographiques : Un attaquant peut l’utiliser pour mener une attaque ‘man in the middle’ ou pour decrypter les communications.
+            3.	Cache Poisoning DNS avec Prédiction du Champ ID de Requête :
+            Cette vulnérabilité concerne la prévisibilité du champ ID de requête DNS utilisé lors des requêtes DNS sortantes.L’attaquant peut l’exploiter pour tromper le serveur DNS en lui fournissant des réponses malveillantes.
+
+
+Tâche 7 : Mesures de Mitigation
+Identifier et expliquer une mesure de mitigation pour la plateforme Windows XP et une pour Metasploitable 2.
+
+            Sur la VM XP :
+            Mise à niveau vers un SE pris en charge :
+            Windows XP est un système d’exploitation obsolète : Microsoft ne fournit plus de mises à jours de sécurité ni de correctifs de sécurité pour ce SE, donc plusieurs vulnérabilités actuelles ne sont pas corrigées. 
+            
+            Sur la VM Metasploitable2
+            Isoler Metasploitable2 dans un réseau distinct : 
+            Metasploitable2 est une machine très vulnérable, il faut limiter l’accès de cette machine en dehors des fins d’apprentissage, elle ne doit pas être exposer directement à internet ca d’autres systèmes pourront facilement l’impacter et tirer profit de ces vulnérabilités.
+
+
