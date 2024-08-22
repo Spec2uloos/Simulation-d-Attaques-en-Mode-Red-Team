@@ -8,6 +8,7 @@ Ce projet vise à simuler des attaques en mode Red Team pour analyser la sécuri
       
       Collecte d'informations sur l'organisation cible.
       Utilisation de Maltego pour identifier les serveurs et les adresses courriels.
+  (Les résultats de cette partie ne seront pas documentés dans ce repertoire)
       
       
   Partie 2 : Scanning
