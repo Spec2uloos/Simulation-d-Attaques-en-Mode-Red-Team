@@ -53,7 +53,7 @@ Ce projet vise à simuler des attaques en mode Red Team pour analyser la sécuri
    
 5. Cloner ce dépôt sur la machine locale :
 
-        git clone https://github.com/votre-utilisateur/simulation-attacks-red-team.git
+        git clone https://github.com/Spec2uloos/Simulation-d-Attaques-en-Mode-Red-Team.git
 
 
 * Utilisation
