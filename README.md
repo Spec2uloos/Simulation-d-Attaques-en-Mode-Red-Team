@@ -11,13 +11,13 @@ Ce projet vise à simuler des attaques en mode Red Team pour analyser la sécuri
   (Les résultats de cette partie ne seront pas documentés dans ce repertoire)
       
       
-  Partie 2 : Scanning
+  Partie 2 : Scanning des ports ouverts 
       
       Configuration des machines virtuelles (VM).
       Réalisation de scans (Ping, SYN, TCP, UDP, OS fingerprinting) pour identifier les ports ouverts.
       
       
-  Partie 3 : Scan de Vulnérabilités
+  Partie 3 : Scan de Vulnérabilités (Nessus)
       
       Réalisation de scans de vulnérabilités avec et sans authentification.
       Analyse des résultats et identification des vulnérabilités critiques.
