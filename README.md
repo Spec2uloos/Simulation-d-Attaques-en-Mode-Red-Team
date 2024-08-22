@@ -47,19 +47,16 @@ Ce projet vise à simuler des attaques en mode Red Team pour analyser la sécuri
 * Installation
 
   
-1. Téléchargez et installez Kali Linux et Metasploitable 2.
+1. Téléchargez et installez Kali Linux et Metasploitable 
    
-3. Configurez les VM pour qu'elles puissent communiquer entre elles.
+2. Configurez les VM pour qu'elles puissent communiquer entre elles.
    
-5. Cloner ce dépôt sur la machine locale :
-
-        git clone https://github.com/Spec2uloos/Simulation-d-Attaques-en-Mode-Red-Team.git
 
 
 * Utilisation
   
 1. Lancer les VM et les outils nécessaires.
 2. Suivez les étapes décrites dans chaque section du projet pour réaliser les simulations.
-3. Consultez les captures d'écran et les résultats des commandes pour chaque phase.
+3. Consultez les captures d'écran et les résultats des commandes pour chaque phase pour comparer vos résultats.
 
    
